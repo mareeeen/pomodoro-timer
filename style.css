@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+
+
+
+:root[color-mode="light"] {
+    --text: #184e77;
+    --bg: #fff;
+    --circle: #FF0000;
+    --circle-text: #FF4D00;
+    --purple: #972780;
+    }
+
+:root[color-mode="dark"] {
+ --text: #fff;
+ --bg: #152028;
+ --circle: #FF4D00;
+ --purple: #972780;
+}
+
+
+:root[color-mode="light"] .light-hidden {
+    display: none;
+}
+
+:root[color-mode="dark"] .dark-hidden {
+    display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Lato", sans-serif;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+button {
+  background-color: transparent;
+  padding: 10px;
+  margin: 10px;
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.timer-container {
+  margin: -50px 20px 20px;
+}
+
+timer-container h2 {
+  margin: 0;
+}
+
+.actions-wrapper span {
+  font-size: 40px;
+  margin: 0 10px;
+  width: 50px;
+}
+
+.clock-container {
+
+ 
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+
+  position: relative;
+
+}
+
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: #6B778D;
+}
+
+.base-timer__path-remaining {
+  /* Just as thick as the original ring */
+  stroke-width: 7px;
+
+  /* Rounds the line endings to create a seamless circle */
+  stroke-linecap: round;
+
+  /* Makes sure the animation starts at the top of the circle */
+  transform: rotate(90deg);
+  transform-origin: center;
+
+  /* One second aligns with the speed of the countdown timer */
+  transition: 1s linear all;
+
+  /* Allows the ring to change color when the color value updates */
+  stroke: currentColor;
+}
+
+
+
+
+.clock-container h1 {
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.clock-container span {
+  top: 50%;
+  left: 50%;
+  font-size: 60px;
+  color: var(--circle) ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label-container {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#toggle-switch {
+ position: absolute;
+ top: 80%;
+ font-size: 30px;
+ color: var(--text);
+}
+
+
+
+
